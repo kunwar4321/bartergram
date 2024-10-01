@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+// region>NavbarItem
 const NavItem = ({ href, text, isActive, onClick, isMobile }) => (
   <Link
     href={href}
