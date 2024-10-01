@@ -3,7 +3,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
 
 const teamMembers = [
   {
@@ -37,40 +36,38 @@ const teamMembers = [
     name: "BALRAJ",
     fullName: "KHAKHAR",
     pronoun: "He/Him",
-    role: "CTO",
+    role: "CFO",
     description:
-      "With a wealth of technical expertise, Balraj leads our development team in creating cutting-edge solutions for our clients and platform.",
+      "Balraj is the financial backbone of our company, ensuring that our operations run smoothly and efficiently. He is a master of numbers and a wizard with finance utilization.",
     video: "/images/about/balraj.mp4",
   },
 ];
 
 export default function TeamMemberShowcase() {
   const [currentMember, setCurrentMember] = useState(0);
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-  });
+
+  const teamMemberRefs = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const newIndex = Math.floor(scrollPosition / windowHeight);
-      if (newIndex !== currentMember && newIndex < teamMembers.length) {
-        setCurrentMember(newIndex);
-      }
+      teamMemberRefs.current.forEach((ref, index) => {
+        if (ref && ref.getBoundingClientRect().top <= window.innerHeight / 2) {
+          setCurrentMember(index);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [currentMember]);
+  }, []);
 
   return (
     <div className="bg-black text-purple-500">
       {teamMembers.map((member, index) => (
         <div
           key={index}
+          ref={(el) => (teamMemberRefs.current[index] = el)}
           className="h-screen snap-start"
-          ref={index === currentMember ? ref : null}
         >
           <TeamMember
             member={member}
@@ -105,11 +102,11 @@ function TeamMember({ member, isActive, isEven }) {
         <AnimatePresence mode="wait">
           {isActive && (
             <motion.div
-              key={member.name}
-              initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: isEven ? 50 : -50 }}
-              transition={{ duration: 0.5 }}
+              key={`${member.name}-text`}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.6 }}
               className={`space-y-4 ${isEven ? "md:order-1" : "md:order-2"}`}
             >
               <h2 className="text-5xl font-bold">{member.name}</h2>
@@ -128,14 +125,15 @@ function TeamMember({ member, isActive, isEven }) {
             </motion.div>
           )}
         </AnimatePresence>
+
         <AnimatePresence mode="wait">
           {isActive && (
             <motion.div
-              key={member.name}
+              key={`${member.name}-video`}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
               className={`relative w-full aspect-[3/4] rounded-lg overflow-hidden ${
                 isEven ? "md:order-2" : "md:order-1"
               }`}
