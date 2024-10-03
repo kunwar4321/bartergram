@@ -6,13 +6,13 @@ import { useEffect, useRef, useState } from "react";
 
 const teamMembers = [
   {
-    name: "SHUBHAM",
-    fullName: "SRIVASTAV",
+    name: "BALRAJ",
+    fullName: "KHAKHAR",
     pronoun: "He/Him",
-    role: "COO & Co-Founder",
+    role: "CFO & Co-Founder",
     description:
-      "Our ever-growing team is a powerful mix of social media moguls, content creators, designers, account managers, copywriters, developers, and very good doggo.",
-    video: "/images/about/shubham.mp4",
+      "Balraj is the financial backbone of our company, ensuring that our operations run smoothly and efficiently. He is a master of numbers and a wizard with finance utilization.",
+    video: "/images/about/balraj.mp4",
   },
   {
     name: "FARHAN",
@@ -27,19 +27,19 @@ const teamMembers = [
     name: "KASHISH",
     fullName: "SINGH DEO",
     pronoun: "She/Her",
-    role: "CMO",
+    role: "Community Lead & Co-Founder",
     description:
       "A creative powerhouse with a keen eye for branding and marketing trends. Kashish drives our content strategy and ensures our message resonates with our audience.",
     video: "/images/about/kashish.mp4",
   },
   {
-    name: "BALRAJ",
-    fullName: "KHAKHAR",
+    name: "SHUBHAM",
+    fullName: "SRIVASTAV",
     pronoun: "He/Him",
-    role: "CFO",
+    role: "COO & Co-Founder",
     description:
-      "Balraj is the financial backbone of our company, ensuring that our operations run smoothly and efficiently. He is a master of numbers and a wizard with finance utilization.",
-    video: "/images/about/balraj.mp4",
+      "Our ever-growing team is a powerful mix of social media moguls, content creators, designers, account managers, copywriters, developers, and very good doggo.",
+    video: "/images/about/shubham.mp4",
   },
 ];
 

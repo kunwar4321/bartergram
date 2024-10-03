@@ -3,30 +3,26 @@
 import TeamMemberShowcase from "../components/TeamMembers";
 
 export default function AboutUs() {
-  const videos = [
-    "/images/about/life1.mp4",
-    "/images/about/life2.mp4",
-    "/images/about/life3.mp4",
-    "/images/about/life4.mp4",
-  ];
   return (
     <div className="bg-black text-purple-500 p-6 pt-36">
-      <video
-        src={"/images/about/group.mp4"}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
-      />
+      <figure className="absolute grid place-items-center inset-0 w-full h-full md:bg-transparent">
+        <video
+          src={"/images/about/group.mp4"}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-contain max-md:aspect-video h-full md:object-cover opacity-50 z-0"
+        />
+      </figure>
       <div className="max-w-6xl mx-auto space-y-20">
         <header className="relative z-10 h-[75svh] md:h-screen grid grid-cols-1 place-items-center md:grid-cols-2">
-          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold md:mr-auto md:pb-[25svh] md:text-left">
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold md:mr-auto pb-[25svh] md:text-left">
             GET TO
             <br />
             KNOW US
           </h1>
-          <p className="text-lg text-center md:text-justify md:mr-auto text-white font-semibold">
+          <p className="text-base sm:text-lg text-center md:text-justify md:mr-auto text-white font-semibold pt-[5svh] md:pt-[25svh]">
             Bartergram was born out of a vision for better collaboration,
             innovation, and redefining partnerships. Our mission is to create a
             platform that empowers businesses to leverage their strengths,

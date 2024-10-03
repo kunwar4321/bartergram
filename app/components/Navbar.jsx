@@ -26,14 +26,14 @@ export default function Navbar() {
     { href: "/", text: "HOME" },
     { href: "/projects", text: "OUR PROJECTS" },
     { href: "/services", text: "OUR SERVICES" },
-    { href: "/contactus", text: "CONTACT US" },
     { href: "/aboutus", text: "ABOUT US" },
+    { href: "/contactus", text: "CONTACT US" },
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full max-md:bg-black/50 max-md:backdrop-blur-sm pb-2.5">
+    <nav className="fixed top-0 left-0 z-50 w-full max-md:bg-black/50 max-md:backdrop-blur-sm pb-2.5 mt-1.5">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between md:justify-center h-16">
           {/* Logo (visible only on mobile when menu is collapsed) */}

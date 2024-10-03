@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const FooterLink = ({ href, children }) => (
@@ -25,7 +25,7 @@ const SocialIcon = ({ Icon, href }) => (
 
 export default function Footer() {
   return (
-    <footer className="text-purple-500 rounded-t-3xl p-4 sm:p-6 lg:p-8">
+    <footer className="text-purple-500 rounded-t-3xl p-4 sm:p-6 lg:p-8 bg-black relative z-10">
       <div className="p-6 border-purple-600 border-2 rounded-lg">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           <div>
@@ -41,8 +41,10 @@ export default function Footer() {
               <FooterLink href="/refund-policy">
                 REFUND & RETURN POLICY
               </FooterLink>
-              <FooterLink href="/privacy">PRIVACY STATEMENT</FooterLink>
-              <FooterLink href="/terms">TERMS OF SERVICE</FooterLink>
+              <FooterLink href="/privacy-policy">PRIVACY STATEMENT</FooterLink>
+              <FooterLink href="/terms-and-conditions">
+                TERMS OF SERVICE
+              </FooterLink>
               <FooterLink href="/contactus">CONTACT US</FooterLink>
             </div>
           </div>
@@ -50,7 +52,7 @@ export default function Footer() {
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">SOCIAL</h3>
             <div className="flex gap-4 mb-6">
               <SocialIcon Icon={Facebook} href="https://facebook.com" />
-              <SocialIcon Icon={Twitter} href="https://twitter.com" />
+              <SocialIcon Icon={Instagram} href="https://twitter.com" />
               <SocialIcon Icon={Youtube} href="https://youtube.com" />
             </div>
             <h3 className="text-xl sm:text-2xl font-semibold mb-2">
@@ -61,10 +63,14 @@ export default function Footer() {
               <Link
                 href="/contactus"
                 className="text-yellow-300 hover:underline"
+                onClick={() => {
+                  sessionStorage.setItem("IsCareerFormOpen", "YES");
+                }}
               >
                 Hiring Form
               </Link>
             </p>
+            <p className="text-sm sm:text-base">Contact Us : +917506109507</p>
           </div>
         </div>
         <div className="mt-6 sm:mt-8 text-center text-xs sm:text-sm">

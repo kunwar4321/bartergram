@@ -3,15 +3,30 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Upload } from "lucide-react";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function TabbedContactForm() {
-  const [activeTab, setActiveTab] = useState("business");
+  const [activeTab, setActiveTab] = useState("careers");
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  useEffect(() => {
+    const activeTab =
+      sessionStorage.getItem("IsCareerFormOpen") === "YES"
+        ? "careers"
+        : "business";
+    setActiveTab(activeTab);
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem(
+      "IsCareerFormOpen",
+      activeTab === "careers" ? "YES" : "NO"
+    );
+  }, [activeTab]);
 
   return (
     <div className={`min-h-screen bg-black text-purple-500 p-6 pt-28`}>
@@ -39,7 +54,10 @@ export default function TabbedContactForm() {
                   ? "bg-purple-500 text-black"
                   : "bg-gray-800"
               }`}
-              onClick={() => setActiveTab("business")}
+              onClick={() => {
+                sessionStorage.setItem("IsCareerFormOpen", "NO");
+                setActiveTab("business");
+              }}
               aria-selected={activeTab === "business"}
               role="tab"
             >
@@ -51,7 +69,9 @@ export default function TabbedContactForm() {
                   ? "bg-purple-500 text-black"
                   : "bg-gray-800"
               }`}
-              onClick={() => setActiveTab("careers")}
+              onClick={() => {
+                setActiveTab("careers");
+              }}
               aria-selected={activeTab === "careers"}
               role="tab"
             >
