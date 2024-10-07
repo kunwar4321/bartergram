@@ -2,13 +2,14 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollVideoWithGSAP({ source }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -23,7 +24,6 @@ export default function ScrollVideoWithGSAP({ source }) {
         fn.call(this, e);
       };
       el.addEventListener(event, onceFn, opts);
-      return onceFn;
     };
 
     // iOS play-pause workaround for video activation
@@ -78,8 +78,16 @@ export default function ScrollVideoWithGSAP({ source }) {
 
     const timer = setTimeout(setupBlobURL, 1000);
 
+    // Set up event listener for when the video is loaded
+    const handleLoadedData = () => {
+      setIsLoaded(true);
+    };
+
+    video.addEventListener("loadeddata", handleLoadedData);
+
     return () => {
       clearTimeout(timer);
+      video.removeEventListener("loadeddata", handleLoadedData);
       if (containerRef.current) {
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       }
@@ -88,13 +96,20 @@ export default function ScrollVideoWithGSAP({ source }) {
 
   return (
     <div className="relative">
+      {!isLoaded && (
+        <div className="fixed h-screen w-screen grid place-items-center z-40">
+          <div className="bg-white/10 rounded-xl animate-pulse w-[90%] h-[90%]"></div>
+        </div>
+      )}
       <video
         ref={videoRef}
         src={source}
         playsInline
         muted
         preload="auto"
-        className="fixed top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
+        className={`fixed top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-300`}
       />
       <div ref={containerRef} className="h-[1000svh]" />
     </div>

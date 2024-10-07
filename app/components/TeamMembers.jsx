@@ -41,33 +41,67 @@ const teamMembers = [
       "Our ever-growing team is a powerful mix of social media moguls, content creators, designers, account managers, copywriters, developers, and very good doggo.",
     video: "/images/about/shubham.mp4",
   },
+  {
+    name: "Aparna",
+    fullName: "Bhardwaj",
+    pronoun: "She/Her",
+    role: "Brand Solutions",
+    description:
+      "With extensive experience and an ever-connected phone, Aparna is our business development expert. She ensures our accounts are always managed efficiently and with care.",
+    video: "/images/about/aparna.mp4",
+  },
+  {
+    name: "Atika",
+    fullName: "Patni",
+    pronoun: "She/Her",
+    role: "SMM Lead",
+    description: `As the head of our social media team, Atika is fully immersed in the latest trends. Her expertise lies in translating the "now" into effective digital campaigns.`,
+    video: "/images/about/atika.mp4",
+  },
+  {
+    name: "Adelbert",
+    fullName: "",
+    pronoun: "He/Him",
+    role: "Production Lead",
+    description:
+      "Our Creative Director, Adelbert, excels in taking ideas beyond their initial scope and executing them flawlessly. With a subtle, precise approach and an extraordinary talent, we are fortunate to have him on our team.",
+    video: "/images/about/adel.mp4",
+  },
 ];
 
 export default function TeamMemberShowcase() {
   const [currentMember, setCurrentMember] = useState(0);
-
-  const teamMemberRefs = useRef([]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      teamMemberRefs.current.forEach((ref, index) => {
-        if (ref && ref.getBoundingClientRect().top <= window.innerHeight / 2) {
-          setCurrentMember(index);
-        }
-      });
-    };
+    const container = containerRef.current;
+    if (!container) return;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrentMember(Number(entry.target.dataset.index));
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    container
+      .querySelectorAll(".team-member")
+      .forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="bg-black text-purple-500">
+    <div ref={containerRef} className="bg-black text-purple-500">
       {teamMembers.map((member, index) => (
         <div
           key={index}
-          ref={(el) => (teamMemberRefs.current[index] = el)}
-          className="h-screen snap-start"
+          data-index={index}
+          className="team-member h-[100svh] snap-start snap-always"
         >
           <TeamMember
             member={member}
@@ -93,12 +127,8 @@ function TeamMember({ member, isActive, isEven }) {
   }, [isActive]);
 
   return (
-    <div className="h-full flex items-center justify-center px-4 md:px-0">
-      <div
-        className={`max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
-          isEven ? "md:grid-flow-col" : "md:grid-flow-col-dense"
-        }`}
-      >
+    <div className="h-full flex items-center justify-center px-4 md:px-0 overflow-hidden">
+      <div className="max-w-6xl w-full flex flex-col md:grid md:grid-cols-2 gap-8 items-center">
         <AnimatePresence mode="wait">
           {isActive && (
             <motion.div
@@ -109,13 +139,15 @@ function TeamMember({ member, isActive, isEven }) {
               transition={{ duration: 0.6 }}
               className={`space-y-4 ${isEven ? "md:order-1" : "md:order-2"}`}
             >
-              <h2 className="text-5xl font-bold">{member.name}</h2>
-              <p className="text-2xl">
+              <h2 className="text-3xl md:text-5xl font-bold">{member.name}</h2>
+              <p className="text-xl md:text-2xl">
                 {member.fullName} {member.pronoun}
               </p>
-              <p className="text-lg opacity-80">{member.description}</p>
+              <p className="text-base md:text-lg opacity-80">
+                {member.description}
+              </p>
               <div className="flex items-center space-x-4">
-                <span className="bg-purple-500 text-black px-4 py-2 rounded-full">
+                <span className="bg-purple-500 text-black px-4 py-2 rounded-full text-sm md:text-base">
                   {member.role}
                 </span>
                 <button className="bg-purple-500 text-black p-2 rounded-full">
@@ -144,7 +176,7 @@ function TeamMember({ member, isActive, isEven }) {
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full md:h-full object-cover max-md:aspect-square rounded-lg"
               />
             </motion.div>
           )}

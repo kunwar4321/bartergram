@@ -10,7 +10,7 @@ const NavItem = ({ href, text, isActive, onClick, isMobile }) => (
   <Link
     href={href}
     className={`px-4 py-2 rounded-full transition-colors duration-300 ${
-      isActive ? "text-[#FFFF00] font-bold" : "text-white hover:text-[#9370DB]"
+      isActive ? "text-[#FFFF00] font-black" : "text-white hover:text-[#9370DB]"
     } ${isMobile ? "text-3xl font-black py-4" : ""}`}
     onClick={onClick}
   >
@@ -33,11 +33,11 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full max-md:bg-black/50 max-md:backdrop-blur-sm pb-2.5 mt-1.5">
+    <nav className="fixed top-0 left-0 z-40 w-full max-md:bg-black/50 max-md:backdrop-blur-sm pb-2.5 mt-1.5">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between md:justify-center h-16">
           {/* Logo (visible only on mobile when menu is collapsed) */}
-          <div className="md:hidden flex items-center pt-2.5">
+          <div className="md:hidden flex items-center md:pt-2.5">
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/logo.png"

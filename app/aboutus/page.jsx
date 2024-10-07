@@ -15,14 +15,14 @@ export default function AboutUs() {
           className="object-contain max-md:aspect-video h-full md:object-cover opacity-50 z-0"
         />
       </figure>
-      <div className="max-w-6xl mx-auto space-y-20">
-        <header className="relative z-10 h-[75svh] md:h-screen grid grid-cols-1 place-items-center md:grid-cols-2">
-          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold md:mr-auto pb-[25svh] md:text-left">
+      <div className="max-w-3xl lg:max-w-4xl 2xl:max-w-6xl mx-auto space-y-20">
+        <header className="relative z-10 max-md:h-[75svh] md:h-screen grid grid-cols-1 place-items-center md:place-items-end md:-translate-y-1/4 md:grid-cols-2">
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold max-md:mb-auto md:mr-auto md:text-left">
             GET TO
             <br />
             KNOW US
           </h1>
-          <p className="text-base sm:text-lg text-center md:text-justify md:mr-auto text-white font-semibold pt-[5svh] md:pt-[25svh]">
+          <p className="text-base md:text-md xl:text-lg text-center md:text-justify md:mr-auto max-md:mt-auto text-white font-semibold">
             Bartergram was born out of a vision for better collaboration,
             innovation, and redefining partnerships. Our mission is to create a
             platform that empowers businesses to leverage their strengths,
@@ -33,7 +33,7 @@ export default function AboutUs() {
         </header>
 
         <section className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-          <h2 className="text-4xl md:text-5xl xl:text-6xl md:pb-[25svh] font-black md:mr-auto">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black md:mr-auto">
             OUR STORY
           </h2>
           <p className="text-lg mb-4 md:text-justify">
@@ -46,7 +46,7 @@ export default function AboutUs() {
           </p>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-          <h2 className="text-4xl md:text-5xl xl:text-6xl md:pb-[25svh] font-black md:mr-auto">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black md:mr-auto">
             MEET THE TEAM
           </h2>
           <p className="text-lg mb-4 md:text-justify">
