@@ -33,7 +33,7 @@ export default function TabbedContactForm() {
       <div className="w-full mx-auto">
         <div className="max-w-6xl mx-auto">
           <motion.h1
-            className="text-4xl font-bold mb-8"
+            className="text-4xl font-bold mb-8 font-sans"
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -111,7 +111,9 @@ export default function TabbedContactForm() {
           variants={fadeIn}
           transition={{ delay: 0.8 }}
         >
-          <h2 className="text-2xl mb-4">We are located at:</h2>
+          <h2 className="text-2xl mb-4 font-sans font-bold">
+            We are located at:
+          </h2>
           <iframe
             width="100%"
             height="500"

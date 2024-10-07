@@ -29,11 +29,11 @@ export default function Footer() {
       <div className="p-6 border-purple-600 border-2 rounded-lg">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 font-sans">
               HAVE A PROJECT ?
             </h2>
             <p className="text-lg sm:text-xl mb-4">Lets Talk About it !</p>
-            <h3 className="text-lg sm:text-xl font-semibold mb-2">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 font-sans">
               Useful Links
             </h3>
             <div className="flex flex-wrap gap-2 sm:gap-4">
@@ -49,20 +49,22 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4">SOCIAL</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 font-sans">
+              SOCIAL
+            </h3>
             <div className="flex gap-4 mb-6">
               <SocialIcon Icon={Facebook} href="https://facebook.com" />
               <SocialIcon Icon={Instagram} href="https://twitter.com" />
               <SocialIcon Icon={Youtube} href="https://youtube.com" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-semibold mb-2">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 font-sans">
               GET IN TOUCH
             </h3>
             <p className="mb-2 text-sm sm:text-base">
               support@bartergram.co or Fill in the{" "}
               <Link
                 href="/contactus"
-                className="text-yellow-300 hover:underline"
+                className="text-yellow-300 hover:underline font-sans"
                 onClick={() => {
                   sessionStorage.setItem("IsCareerFormOpen", "YES");
                 }}

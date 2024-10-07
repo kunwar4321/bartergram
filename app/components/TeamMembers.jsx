@@ -42,8 +42,8 @@ const teamMembers = [
     video: "/images/about/shubham.mp4",
   },
   {
-    name: "Aparna",
-    fullName: "Bhardwaj",
+    name: "APARNA",
+    fullName: "BHARDWAJ",
     pronoun: "She/Her",
     role: "Brand Solutions",
     description:
@@ -51,15 +51,15 @@ const teamMembers = [
     video: "/images/about/aparna.mp4",
   },
   {
-    name: "Atika",
-    fullName: "Patni",
+    name: "ATIKA",
+    fullName: "PATNI",
     pronoun: "She/Her",
     role: "SMM Lead",
     description: `As the head of our social media team, Atika is fully immersed in the latest trends. Her expertise lies in translating the "now" into effective digital campaigns.`,
     video: "/images/about/atika.mp4",
   },
   {
-    name: "Adelbert",
+    name: "ADELBERT",
     fullName: "",
     pronoun: "He/Him",
     role: "Production Lead",
@@ -139,7 +139,9 @@ function TeamMember({ member, isActive, isEven }) {
               transition={{ duration: 0.6 }}
               className={`space-y-4 ${isEven ? "md:order-1" : "md:order-2"}`}
             >
-              <h2 className="text-3xl md:text-5xl font-bold">{member.name}</h2>
+              <h2 className="text-3xl md:text-5xl font-bold font-sans">
+                {member.name}
+              </h2>
               <p className="text-xl md:text-2xl">
                 {member.fullName} {member.pronoun}
               </p>

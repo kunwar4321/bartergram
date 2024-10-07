@@ -9,9 +9,9 @@ import { useState } from "react";
 const NavItem = ({ href, text, isActive, onClick, isMobile }) => (
   <Link
     href={href}
-    className={`px-4 py-2 rounded-full transition-colors duration-300 ${
-      isActive ? "text-[#FFFF00] font-black" : "text-white hover:text-[#9370DB]"
-    } ${isMobile ? "text-3xl font-black py-4" : ""}`}
+    className={`px-4 py-2 rounded-full transition-colors duration-300 font-black font-sans ${
+      isActive ? "text-[#FFFF00]" : "text-white hover:text-[#9370DB]"
+    } ${isMobile ? "text-3xl py-4" : ""}`}
     onClick={onClick}
   >
     {text}

@@ -277,12 +277,15 @@ const ProjectCard = ({ project }) => (
         width={400}
         height={300}
         layout="responsive"
+        unoptimized
         className="w-full h-full object-cover"
       />
     )}{" "}
     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
       {" "}
-      <h3 className="text-white text-xl font-bold">{project.title}</h3>{" "}
+      <span className="px-2.5 py-1 rounded-xl bg-gradient-to-b from-purple-200 via-skyblue-500 to-yellow-500 font-black text-black">
+        view more
+      </span>
     </div>{" "}
   </Link>
 );
@@ -295,7 +298,7 @@ export default function ProjectGrid() {
       {" "}
       <div className="max-w-7xl mx-auto">
         {" "}
-        <h2 className="text-4xl sm:text-5xl font-bold text-purple-500 mb-2">
+        <h2 className="text-4xl sm:text-5xl font-bold text-purple-500 mb-2 font-sans">
           {" "}
           ALL PROJECTS{" "}
         </h2>{" "}

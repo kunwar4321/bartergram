@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ScrollVideoWithGSAP from "../components/VideoPlayer";
 
 const ServicePage = () => {
@@ -28,12 +29,18 @@ const ServicePage = () => {
 
         <div className="max-w-3xl lg:max-w-4xl 2xl:max-w-6xl mx-auto space-y-20">
           <header className="relative z-10 max-lg:h-[75svh] lg:h-screen grid grid-cols-1 place-items-center lg:place-items-end lg:-translate-y-1/4 lg:grid-cols-2">
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold lg:mr-auto lg:text-left mb-10 md:mb-28 text-purple-500">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold lg:mr-auto lg:text-left md:mb-28 text-purple-500 font-sans sm:-translate-y-20">
               Services
             </h1>
-            <p className="text-base lg:text-md xl:text-lg text-center lg:text-justify lg:mr-auto mt-10 md:mt-28 text-white font-semibold">
+            <p className="text-base lg:text-md xl:text-lg text-center lg:text-justify lg:mr-auto mt-20 translate-y-6 sm:translate-y-14 md:translate-y-20 md:mt-28 text-purple-500 font-semibold px-10">
               Our comprehensive range of features and tasks makes us unbeatable
-              and ready for any challenge.
+              and ready for any challenge. Need to know more?{" "}
+              <Link
+                href="/contactus"
+                className="text-yellow-300 hover:underline font-sans"
+              >
+                Contact Us
+              </Link>
             </p>
           </header>
         </div>

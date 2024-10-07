@@ -43,9 +43,9 @@ export default function ProjectDetailPage({ params }) {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="mb-12">
           <h2 className="text-purple-400 text-2xl mb-4">
-            Client: {project.client}
+            Client: <span className="font-sans">{project.client}</span>
           </h2>
-          <h1 className="text-purple-300 text-5xl font-bold mb-8">
+          <h1 className="text-purple-300 text-5xl font-bold mb-8 font-sans">
             Amplifying awareness and
             <br />
             social for
@@ -58,14 +58,14 @@ export default function ProjectDetailPage({ params }) {
         </div>
 
         <section className="mb-12">
-          <h3 className="text-2xl font-semibold text-purple-400 mb-4">
+          <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-sans">
             The Client
           </h3>
           <p className="text-gray-300">{project.aboutClient}</p>
         </section>
 
         <section className="mb-12">
-          <h3 className="text-2xl font-semibold text-purple-400 mb-4">
+          <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-sans">
             The Brief
           </h3>
           <p className="text-gray-300">{project.aboutCampaign}</p>
@@ -81,14 +81,14 @@ export default function ProjectDetailPage({ params }) {
         </section>
 
         <section className="mb-12">
-          <h3 className="text-2xl font-semibold text-purple-400 mb-4">
+          <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-sans">
             What We Did
           </h3>
           <p className="text-gray-300">{project.effect}</p>
         </section>
 
         <section className="mb-12">
-          <h3 className="text-2xl font-semibold text-purple-400 mb-4">
+          <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-sans">
             The Result
           </h3>
           <p className="text-gray-300 mb-4">{project.result[0]}</p>
@@ -101,7 +101,7 @@ export default function ProjectDetailPage({ params }) {
         </section>
 
         <section>
-          <h3 className="text-2xl font-semibold text-purple-400 mb-4">
+          <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-sans">
             More Projects
           </h3>
           <div className="grid grid-cols-3 gap-4">
@@ -115,6 +115,7 @@ export default function ProjectDetailPage({ params }) {
                     alt={p.title}
                     width={200}
                     height={150}
+                    unoptimized
                     className="rounded-lg w-full"
                   />
                 </Link>

@@ -152,6 +152,7 @@ const PartnersCarousel = () => {
               alt={`Partner logo ${logo}`}
               width={100}
               height={100}
+              unoptimized
               className="max-w-[100px] h-auto mx-4"
             />
           </div>
@@ -162,7 +163,7 @@ const PartnersCarousel = () => {
 
   return (
     <div className="w-full overflow-hidden my-8">
-      <h2 className="text-2xl lg:text-4xl font-bold text-center mb-8 text-purple-600 px-10">
+      <h2 className="text-2xl lg:text-4xl font-bold text-center mb-8 text-purple-600 px-10 font-sans">
         Worked with the best, eyeing for greatness
       </h2>
       <div className="mb-8">

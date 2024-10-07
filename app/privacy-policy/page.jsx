@@ -96,7 +96,7 @@ const PrivacyPolicyPage = () => {
             key={index}
             className="bg-white/10 shadow-md rounded-lg p-6 mb-8"
           >
-            <h2 className="text-2xl font-semibold mb-4 text-purple-700">
+            <h2 className="text-2xl font-semibold mb-4 text-purple-700 font-sans">
               SECTION {index + 1} - {section.title}
             </h2>
             <div className="text-purple-500 space-y-4">

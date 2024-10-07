@@ -58,7 +58,7 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="relative w-full h-[60vh] lg:h-[80vh] overflow-hidden mt-8">
-      <h2 className="text-2xl lg:text-4xl font-bold text-center text-purple-600 px-10">
+      <h2 className="text-2xl lg:text-4xl font-bold text-center text-purple-600 px-10 font-sans">
         We've got the facts! <br /> Hear what our clients say about us.
       </h2>
       <div className="absolute inset-0 flex items-center justify-center">
@@ -87,9 +87,9 @@ const TestimonialCarousel = () => {
                 src={`/images/testimonials/${testimonial.image}.png`}
                 alt={testimonial.alt}
                 fill
+                unoptimized
                 sizes={`${imageSize}px`}
                 className="object-contain rounded-3xl shadow-xl"
-                priority
               />
             </motion.div>
           ))}

@@ -17,7 +17,7 @@ export default function AboutUs() {
       </figure>
       <div className="max-w-3xl lg:max-w-4xl 2xl:max-w-6xl mx-auto space-y-20">
         <header className="relative z-10 max-md:h-[75svh] md:h-screen grid grid-cols-1 place-items-center md:place-items-end md:-translate-y-1/4 md:grid-cols-2">
-          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold max-md:mb-auto md:mr-auto md:text-left">
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold max-md:mb-auto md:mr-auto md:text-left font-sans">
             GET TO
             <br />
             KNOW US
@@ -33,7 +33,7 @@ export default function AboutUs() {
         </header>
 
         <section className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black md:mr-auto">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black md:mr-auto font-sans">
             OUR STORY
           </h2>
           <p className="text-lg mb-4 md:text-justify">
@@ -46,7 +46,7 @@ export default function AboutUs() {
           </p>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 place-items-center">
-          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black md:mr-auto">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-black md:mr-auto font-sans">
             MEET THE TEAM
           </h2>
           <p className="text-lg mb-4 md:text-justify">
@@ -74,7 +74,7 @@ function LifeAtBartergram() {
   return (
     <section className="relative py-16 md:py-24 lg:py-32">
       <div className="container mx-auto px-4">
-        <h2 className="md:scale-90 md:hidden text-center pb-10 text-3xl font-bold text-purple-800 leading-tight tracking-tighter">
+        <h2 className="md:scale-90 md:hidden text-center pb-10 text-3xl font-bold text-purple-800 leading-tight tracking-tighter font-sans">
           LIFE AT BARTER GRAM
         </h2>
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -94,7 +94,7 @@ function LifeAtBartergram() {
 
           {/* Right side: Text content */}
           <div className="hidden md:block lg:w-1/3 text-right">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-purple-800 leading-tight tracking-tighter">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-purple-800 leading-tight tracking-tighter font-sans">
               LIFE
               <br />
               AT

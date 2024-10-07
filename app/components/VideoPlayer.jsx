@@ -111,7 +111,7 @@ export default function ScrollVideoWithGSAP({ source }) {
           isLoaded ? "opacity-100" : "opacity-0"
         } transition-opacity duration-300`}
       />
-      <div ref={containerRef} className="h-[1000svh]" />
+      <div ref={containerRef} className="h-[300svh]" />
     </div>
   );
 }
