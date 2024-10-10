@@ -84,7 +84,7 @@ const TestimonialCarousel = () => {
               style={{ width: imageSize, height: imageSize }}
             >
               <Image
-                src={`https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/testimonials/${testimonial.image}.png`}
+                src={`https://d1kk659jf5ewui.cloudfront.net/testimonials/${testimonial.image}.png`}
                 alt={testimonial.alt}
                 fill
                 unoptimized

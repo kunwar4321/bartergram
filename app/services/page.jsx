@@ -6,9 +6,7 @@ const ServicePage = () => {
     <main>
       <section className="hidden lg:block">
         <ScrollVideoWithGSAP
-          source={
-            "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/videos/service.mp4"
-          }
+          source={"https://d1kk659jf5ewui.cloudfront.net/videos/service.mp4"}
         />
       </section>
       <section className="relative lg:hidden h-screen grid place-items-center">
@@ -21,7 +19,7 @@ const ServicePage = () => {
             className="object-contain max-lg:aspect-video h-full lg:object-cover z-0"
           >
             <source
-              src="https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/videos/service.mp4"
+              src="https://d1kk659jf5ewui.cloudfront.net/videos/service.mp4"
               type="video/mp4"
             />
           </video>

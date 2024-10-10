@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "bartergram-static-bucket.s3.ap-south-1.amazonaws.com",
+        hostname: "d1kk659jf5ewui.cloudfront.net",
       },
     ],
   },

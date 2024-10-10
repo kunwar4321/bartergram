@@ -12,8 +12,7 @@ const teamMembers = [
     role: "CFO & Co-Founder",
     description:
       "Balraj is the financial backbone of our company, ensuring that our operations run smoothly and efficiently. He is a master of numbers and a wizard with finance utilization.",
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/balraj.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/balraj.mp4",
   },
   {
     name: "FARHAN",
@@ -22,8 +21,7 @@ const teamMembers = [
     role: "CEO & Co-Founder",
     description:
       "Leading our team with innovative strategies and a passion for digital marketing. Farhan brings years of experience in building successful online platforms.",
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/farhan.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/farhan.mp4",
   },
   {
     name: "KASHISH",
@@ -32,8 +30,7 @@ const teamMembers = [
     role: "Community Lead & Co-Founder",
     description:
       "A creative powerhouse with a keen eye for branding and marketing trends. Kashish drives our content strategy and ensures our message resonates with our audience.",
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/kashish.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/kashish.mp4",
   },
   {
     name: "SHUBHAM",
@@ -42,8 +39,7 @@ const teamMembers = [
     role: "COO & Co-Founder",
     description:
       "Our ever-growing team is a powerful mix of social media moguls, content creators, designers, account managers, copywriters, developers, and very good doggo.",
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/shubham.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/shubham.mp4",
   },
   {
     name: "APARNA",
@@ -52,8 +48,7 @@ const teamMembers = [
     role: "Brand Solutions",
     description:
       "With extensive experience and an ever-connected phone, Aparna is our business development expert. She ensures our accounts are always managed efficiently and with care.",
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/aparna.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/aparna.mp4",
   },
   {
     name: "ATIKA",
@@ -61,8 +56,7 @@ const teamMembers = [
     pronoun: "She/Her",
     role: "SMM Lead",
     description: `As the head of our social media team, Atika is fully immersed in the latest trends. Her expertise lies in translating the "now" into effective digital campaigns.`,
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/atika.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/atika.mp4",
   },
   {
     name: "ADELBERT",
@@ -71,8 +65,7 @@ const teamMembers = [
     role: "Production Lead",
     description:
       "Our Creative Director, Adelbert, excels in taking ideas beyond their initial scope and executing them flawlessly. With a subtle, precise approach and an extraordinary talent, we are fortunate to have him on our team.",
-    video:
-      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/adel.mp4",
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/adel.mp4",
   },
 ];
 

@@ -96,7 +96,7 @@ export default function TabbedContactForm() {
           transition={{ delay: 0.6 }}
         >
           <Image
-            src="https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/contacts/contact.jpg"
+            src="https://d1kk659jf5ewui.cloudfront.net/contacts/contact.jpg"
             alt="Hands typing on keyboard"
             width={600}
             height={100}
