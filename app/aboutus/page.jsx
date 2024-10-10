@@ -7,7 +7,9 @@ export default function AboutUs() {
     <div className="bg-black text-purple-500 p-6 pt-36">
       <figure className="absolute grid place-items-center inset-0 w-full h-full md:bg-transparent">
         <video
-          src={"/images/about/group.mp4"}
+          src={
+            "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/videos/group.mp4"
+          }
           autoPlay
           loop
           muted
@@ -65,10 +67,10 @@ export default function AboutUs() {
 
 function LifeAtBartergram() {
   const images = [
-    "/images/about/life1.mp4",
-    "/images/about/life2.mp4",
-    "/images/about/life3.mp4",
-    "/images/about/life4.mp4",
+    "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/life1.mp4",
+    "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/life2.mp4",
+    "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/life3.mp4",
+    "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/about/life4.mp4",
   ];
 
   return (

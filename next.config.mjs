@@ -5,7 +5,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "bartergram-static-bucket.s3.ap-south-1.amazonaws.com",
-        pathname: "/*",
       },
     ],
   },

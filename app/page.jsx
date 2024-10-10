@@ -5,7 +5,9 @@ const HomePage = () => {
   return (
     <main>
       <video
-        src={"/videos/home.mp4"}
+        src={
+          "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/videos/home.mp4"
+        }
         playsInline
         muted
         autoPlay

@@ -96,7 +96,7 @@ export default function TabbedContactForm() {
           transition={{ delay: 0.6 }}
         >
           <Image
-            src="/images/contact.jpg"
+            src="https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/contacts/contact.jpg"
             alt="Hands typing on keyboard"
             width={600}
             height={100}
@@ -168,7 +168,7 @@ function BusinessForm() {
       setIsSubmitting(true);
       try {
         const response = await fetch(
-          "https://your-api-gateway-url.amazonaws.com/prod/submit-form",
+          "http://barter.asit-solutions.in/api/business",
           {
             method: "POST",
             headers: {
@@ -178,7 +178,7 @@ function BusinessForm() {
           }
         );
         if (response.ok) {
-          alert("Form submitted successfully!");
+          // Reset form values
           setFormData({
             name: "",
             email: "",
@@ -191,7 +191,6 @@ function BusinessForm() {
           throw new Error("Form submission failed");
         }
       } catch (error) {
-        alert("An error occurred. Please try again later.");
         console.error("Submission error:", error);
       } finally {
         setIsSubmitting(false);
@@ -367,14 +366,13 @@ function CareersForm() {
         }
 
         const response = await fetch(
-          "https://your-api-gateway-url.amazonaws.com/prod/submit-careers-form",
+          "http://barter.asit-solutions.in/api/careers",
           {
             method: "POST",
             body: formDataToSend,
           }
         );
         if (response.ok) {
-          alert("Application submitted successfully!");
           setFormData({
             name: "",
             email: "",
@@ -387,7 +385,6 @@ function CareersForm() {
           throw new Error("Form submission failed");
         }
       } catch (error) {
-        alert("An error occurred. Please try again later.");
         console.error("Submission error:", error);
       } finally {
         setIsSubmitting(false);

@@ -148,7 +148,7 @@ const PartnersCarousel = () => {
         {[...items, ...items, ...items].map((logo, index) => (
           <div key={index} className="grid place-items-center p-4 bg-white/5">
             <Image
-              src={`/images/partners/${logo}`}
+              src={`https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/partners/${logo}`}
               alt={`Partner logo ${logo}`}
               width={100}
               height={100}

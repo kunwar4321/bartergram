@@ -5,7 +5,8 @@ export const projects = [
   {
     id: 1,
     title: "ts",
-    image: "/images/projects/ts.gif",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/ts.gif",
     isGif: false,
     client: "XIAOMI: Taylor Swift",
     description: "Amplifying awarness and social for XIAOMI",
@@ -36,7 +37,8 @@ export const projects = [
   {
     id: 2,
     title: "bruno",
-    image: "/images/projects/bruno.gif",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/bruno.gif",
     isGif: false,
     client: "XIAOMI: Bruno Mars",
     description: "Amplifying awarness and social for XIAOMI",
@@ -73,7 +75,8 @@ export const projects = [
   {
     id: 3,
     title: "icc",
-    image: "/images/projects/icc.gif",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/icc.gif",
     isGif: false,
     client: "ICC",
     description: "Amplifying awarness and social presents for ICC",
@@ -105,7 +108,8 @@ export const projects = [
   {
     id: 4,
     title: "predator",
-    image: "/images/projects/predator.png",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/predator.png",
     isGif: false,
     client: "Predator",
     description: "Amplifying awarness and social presents for Predator",
@@ -136,7 +140,8 @@ export const projects = [
   {
     id: 5,
     title: "jhonnie",
-    image: "/images/projects/jhonnie.png",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/jhonnie.png",
     isGif: false,
     client: "Johnnie Walker",
     description: "Amplifying awarness and social presents  for Johnnie Walker",
@@ -164,7 +169,8 @@ export const projects = [
   {
     id: 6,
     title: "signature",
-    image: "/images/projects/signature.png",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/signature.png",
     isGif: false,
     client: "SIGNATURE GREEN VIBES",
     description: "Amplifying awarness and social presents for Signature",
@@ -193,7 +199,8 @@ export const projects = [
   {
     id: 7,
     title: "boldcare",
-    image: "/images/projects/boldcare.png",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/boldcare.png",
     isGif: false,
     client: "Bold Care",
     description: "Amplifying awarness and social presents for Bold Care",
@@ -222,7 +229,8 @@ export const projects = [
   {
     id: 8,
     title: "rapido",
-    image: "/images/projects/rapido.png",
+    image:
+      "https://bartergram-static-bucket.s3.ap-south-1.amazonaws.com/projects/rapido.png",
     isGif: false,
     client: "Rapido",
     description: "Amplifying awarness and social for Rapido",
