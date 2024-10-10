@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/logo.png" />
       </head>
-      <body className={`${inter.className} ${lemonMilk.variable}`}>
+      <body className={`${inter.className} ${lemonMilk.variable} min-h-screen`}>
         <SplashScreen />
         <Navbar />
         {children}
