@@ -139,6 +139,7 @@ function BusinessForm() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const validateForm = () => {
     let newErrors = {};
@@ -166,9 +167,10 @@ function BusinessForm() {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
+      setSubmitStatus(null);
       try {
         const response = await fetch(
-          "http://barter.asit-solutions.in/api/business",
+          "http://localhost:8080/api/v1/businesses",
           {
             method: "POST",
             headers: {
@@ -177,8 +179,8 @@ function BusinessForm() {
             body: JSON.stringify(formData),
           }
         );
+        const data = await response.json();
         if (response.ok) {
-          // Reset form values
           setFormData({
             name: "",
             email: "",
@@ -187,11 +189,16 @@ function BusinessForm() {
             service: "",
             message: "",
           });
+          setSubmitStatus({ success: true, message: data.message });
         } else {
-          throw new Error("Form submission failed");
+          throw new Error(data.message || "Form submission failed");
         }
       } catch (error) {
         console.error("Submission error:", error);
+        setSubmitStatus({
+          success: false,
+          message: error.message || "An unknown error occurred",
+        });
       } finally {
         setIsSubmitting(false);
       }
@@ -223,6 +230,7 @@ function BusinessForm() {
           <p className="text-red-500 text-sm mt-1">{errors.name}</p>
         )}
       </motion.div>
+
       <motion.div whileHover={{ scale: 1.05 }}>
         <input
           className={`w-full bg-transparent border-b ${
@@ -239,6 +247,7 @@ function BusinessForm() {
           <p className="text-red-500 text-sm mt-1">{errors.email}</p>
         )}
       </motion.div>
+
       <motion.div whileHover={{ scale: 1.05 }}>
         <input
           className={`w-full bg-transparent border-b ${
@@ -255,6 +264,7 @@ function BusinessForm() {
           <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
         )}
       </motion.div>
+
       <motion.div whileHover={{ scale: 1.05 }}>
         <input
           className="w-full bg-transparent border-b border-purple-500 p-2"
@@ -265,6 +275,7 @@ function BusinessForm() {
           onChange={handleChange}
         />
       </motion.div>
+
       <motion.div whileHover={{ scale: 1.05 }}>
         <select
           className={`w-full bg-transparent border-b ${
@@ -284,6 +295,7 @@ function BusinessForm() {
           <p className="text-red-500 text-sm mt-1">{errors.service}</p>
         )}
       </motion.div>
+
       <motion.div whileHover={{ scale: 1.05 }}>
         <textarea
           className="w-full bg-transparent border-b border-purple-500 p-2"
@@ -294,6 +306,7 @@ function BusinessForm() {
           onChange={handleChange}
         ></textarea>
       </motion.div>
+
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -303,6 +316,21 @@ function BusinessForm() {
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </motion.button>
+
+      <AnimatePresence>
+        {submitStatus && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className={`mt-4 p-4 rounded-md ${
+              submitStatus.success ? "bg-green-500" : "bg-red-500"
+            } text-white`}
+          >
+            {submitStatus.message}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.form>
   );
 }
@@ -319,6 +347,7 @@ function CareersForm() {
   const [fileName, setFileName] = useState(null);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const validateForm = () => {
     let newErrors = {};
@@ -347,7 +376,7 @@ function CareersForm() {
     setFileName(file ? file.name : null);
     setFormData((prevData) => ({
       ...prevData,
-      cv: file,
+      cv: file || null,
     }));
   };
 
@@ -359,19 +388,23 @@ function CareersForm() {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
+      setSubmitStatus(null);
       try {
         const formDataToSend = new FormData();
         for (const key in formData) {
-          formDataToSend.append(key, formData[key]);
+          if (formData[key] !== null) {
+            formDataToSend.append(key, formData[key]);
+          }
         }
 
         const response = await fetch(
-          "http://barter.asit-solutions.in/api/careers",
+          "https://api.bartergram.co/api/v1/careers",
           {
             method: "POST",
             body: formDataToSend,
           }
         );
+        const data = await response.json();
         if (response.ok) {
           setFormData({
             name: "",
@@ -381,11 +414,19 @@ function CareersForm() {
             message: "",
           });
           setFileName(null);
+          setSubmitStatus({ success: true, message: data.message });
         } else {
-          throw new Error("Form submission failed");
+          throw new Error(data.message || "Form submission failed");
         }
       } catch (error) {
         console.error("Submission error:", error);
+        setSubmitStatus({
+          success: false,
+          message:
+            error instanceof Error
+              ? error.message
+              : "An unknown error occurred",
+        });
       } finally {
         setIsSubmitting(false);
       }
@@ -493,6 +534,20 @@ function CareersForm() {
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </motion.button>
+      <AnimatePresence>
+        {submitStatus && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className={`mt-4 p-4 rounded-md ${
+              submitStatus.success ? "bg-green-500" : "bg-red-500"
+            } text-white`}
+          >
+            {submitStatus.message}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.form>
   );
 }
