@@ -4,12 +4,14 @@ import ScrollVideoWithGSAP from "../components/VideoPlayer";
 const ServicePage = () => {
   return (
     <main>
-      <section className="hidden lg:block">
+      {/* TODO: Add lg:block when debugging */}
+      <section className="hidden">
         <ScrollVideoWithGSAP
           source={"https://d1kk659jf5ewui.cloudfront.net/videos/service.mp4"}
         />
       </section>
-      <section className="relative lg:hidden h-screen grid place-items-center">
+      {/* TODO: Remove lg:hidden when debugging */}
+      <section className="relative h-screen grid place-items-center">
         <figure className="absolute grid place-items-center inset-0 w-full h-full lg:bg-transparent">
           <video
             autoPlay
@@ -25,7 +27,7 @@ const ServicePage = () => {
           </video>
         </figure>
 
-        <div className="max-w-3xl lg:max-w-4xl 2xl:max-w-6xl mx-auto space-y-20">
+        <div className="max-w-3xl lg:hidden lg:max-w-4xl 2xl:max-w-6xl mx-auto space-y-20">
           <header className="relative z-10 max-lg:h-[75svh] lg:h-screen grid grid-cols-1 place-items-center lg:place-items-end lg:-translate-y-1/4 lg:grid-cols-2">
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold lg:mr-auto lg:text-left md:mb-28 text-purple-500 font-sans sm:-translate-y-20">
               Services

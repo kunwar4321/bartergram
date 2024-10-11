@@ -5,6 +5,7 @@ import TeamMemberShowcase from "../components/TeamMembers";
 export default function AboutUs() {
   return (
     <div className="bg-black text-purple-500 p-6 pt-36">
+      <div className="md:h-screen"></div>
       <figure className="absolute grid place-items-center inset-0 w-full h-full md:bg-transparent">
         <video
           src={"https://d1kk659jf5ewui.cloudfront.net/videos/group.mp4"}
@@ -12,12 +13,27 @@ export default function AboutUs() {
           loop
           muted
           playsInline
-          className="object-contain max-md:aspect-video h-full md:object-cover opacity-50 z-0"
+          className="object-contain max-md:aspect-video h-full md:object-cover z-0"
         />
       </figure>
+      <header className="max-md:hidden absolute bottom-0 md:px-20 lg:px-36 left-0 bg-black/30 md:py-4 lg:py-10 z-10 grid grid-cols-1 place-items-center md:place-items-end md:grid-cols-2">
+        <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold max-md:mb-auto md:mr-auto md:text-left font-sans">
+          GET TO
+          <br />
+          KNOW US
+        </h1>
+        <p className="text-base md:text-md xl:text-lg text-center md:text-justify md:mr-auto max-md:mt-auto text-white font-semibold">
+          Bartergram was born out of a vision for better collaboration,
+          innovation, and redefining partnerships. Our mission is to create a
+          platform that empowers businesses to leverage their strengths,
+          optimize resources, and drive mutual growth through strategic
+          alliances. Together, we aim to forge a brighter, connected future
+          where mutual growth and success thrive.
+        </p>
+      </header>
       <div className="max-w-3xl lg:max-w-4xl 2xl:max-w-6xl mx-auto space-y-20">
-        <header className="relative z-10 max-md:h-[75svh] md:h-screen grid grid-cols-1 place-items-center md:place-items-end md:-translate-y-1/4 md:grid-cols-2">
-          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold max-md:mb-auto md:mr-auto md:text-left font-sans">
+        <header className="md:hidden z-10 grid grid-cols-1 min-h-[75svh] place-items-center md:place-items-end md:grid-cols-2">
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold max-md:mb-auto md:mr-auto md:text-left font-sans sm:-translate-y-20">
             GET TO
             <br />
             KNOW US

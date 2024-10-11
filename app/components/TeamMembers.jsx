@@ -51,14 +51,6 @@ const teamMembers = [
     video: "https://d1kk659jf5ewui.cloudfront.net/about/aparna.mp4",
   },
   {
-    name: "ATIKA",
-    fullName: "PATNI",
-    pronoun: "She/Her",
-    role: "SMM Lead",
-    description: `As the head of our social media team, Atika is fully immersed in the latest trends. Her expertise lies in translating the "now" into effective digital campaigns.`,
-    video: "https://d1kk659jf5ewui.cloudfront.net/about/atika.mp4",
-  },
-  {
     name: "ADELBERT",
     fullName: "",
     pronoun: "He/Him",
@@ -66,6 +58,14 @@ const teamMembers = [
     description:
       "Our Creative Director, Adelbert, excels in taking ideas beyond their initial scope and executing them flawlessly. With a subtle, precise approach and an extraordinary talent, we are fortunate to have him on our team.",
     video: "https://d1kk659jf5ewui.cloudfront.net/about/adel.mp4",
+  },
+  {
+    name: "ATIKA",
+    fullName: "PATNI",
+    pronoun: "She/Her",
+    role: "SMM Lead",
+    description: `As the head of our social media team, Atika is fully immersed in the latest trends. Her expertise lies in translating the "now" into effective digital campaigns.`,
+    video: "https://d1kk659jf5ewui.cloudfront.net/about/atika.mp4",
   },
 ];
 
@@ -77,6 +77,9 @@ export default function TeamMemberShowcase() {
     const container = containerRef.current;
     if (!container) return;
 
+    const isMobile = window.innerWidth <= 768;
+    const threshold = isMobile ? 0.5 : 0.1;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -85,7 +88,7 @@ export default function TeamMemberShowcase() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold }
     );
 
     container

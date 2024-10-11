@@ -170,7 +170,7 @@ function BusinessForm() {
       setSubmitStatus(null);
       try {
         const response = await fetch(
-          "http://localhost:8080/api/v1/businesses",
+          "https://api.bartergram.co/api/v1/businesses",
           {
             method: "POST",
             headers: {
