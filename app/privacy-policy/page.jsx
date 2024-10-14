@@ -1,3 +1,5 @@
+import DeleteAccount from "../components/DeleteAccount";
+
 const sections = [
   {
     title: "WHAT DO WE DO WITH YOUR INFORMATION?",
@@ -62,6 +64,36 @@ const sections = [
     ],
   },
   {
+    title: "Account Deletion",
+    content: [
+      "You have the right to delete your account at any time. If you choose to delete your account, your personal information and data associated with your account will be permanently removed from our system. Please note that this action is irreversible, and once your account is deleted, you may lose access to certain features and information. We take the security and privacy of your data seriously and strive to provide you with the control to manage your account as you see fit.",
+    ],
+    component: (
+      <ul className="list-disc pl-4 accent-rose-500">
+        <h3 className="font-semibold text-base lg:text-md mt-3 mb-0.5">
+          Note:
+        </h3>
+        <li>Your account deletion request is processed promptly.</li>
+        <li>
+          All personal information, including user profile data, will be
+          deleted.
+        </li>
+        <li>
+          Associated posts, comments, and uploaded content will be permanently
+          removed.
+        </li>
+        <li>
+          This action is irreversible, and there is no recovery of deleted data.
+        </li>
+        <li>
+          Access to certain features and information will be lost upon deletion.
+        </li>
+
+        <DeleteAccount />
+      </ul>
+    ),
+  },
+  {
     title: "CHANGES TO THIS PRIVACY POLICY",
     content: [
       "We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.",
@@ -94,7 +126,7 @@ const PrivacyPolicyPage = () => {
         {sections.map((section, index) => (
           <section
             key={index}
-            className="bg-white/10 shadow-md rounded-lg p-6 mb-8"
+            className="bg-white/10 shadow-md rounded-lg p-6 mb-8 text-purple-500"
           >
             <h2 className="text-2xl font-semibold mb-4 text-purple-700 font-sans">
               SECTION {index + 1} - {section.title}
@@ -104,6 +136,8 @@ const PrivacyPolicyPage = () => {
                 <p key={pIndex}>{paragraph}</p>
               ))}
             </div>
+
+            {section.component && section.component}
           </section>
         ))}
       </div>
