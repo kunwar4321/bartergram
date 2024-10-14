@@ -78,7 +78,7 @@ export default function TeamMemberShowcase() {
     if (!container) return;
 
     const isMobile = window.innerWidth <= 768;
-    const threshold = isMobile ? 0.5 : 0.1;
+    const threshold = isMobile ? 0.5 : 0.05;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -142,7 +142,7 @@ function TeamMember({ member, isActive, isEven }) {
               transition={{ duration: 0.6 }}
               className={`space-y-4 ${isEven ? "md:order-1" : "md:order-2"}`}
             >
-              <h2 className="text-3xl md:text-5xl font-bold font-sans">
+              <h2 className="text-3xl md:text-5xl font-bold font-sans text-[#FFFF00]">
                 {member.name}
               </h2>
               <p className="text-xl md:text-2xl">
