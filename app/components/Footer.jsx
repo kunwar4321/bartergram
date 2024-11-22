@@ -32,7 +32,13 @@ export default function Footer() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 font-sans">
               HAVE A PROJECT ?
             </h2>
-            <p className="text-lg sm:text-xl mb-4">Lets Talk About it !</p>
+            <Link
+              onClick={() => sessionStorage.setItem("IsCareerFormOpen", "NO")}
+              href="/contactus"
+              className="text-lg sm:text-xl mb-4 block underline"
+            >
+              Lets Talk About it !
+            </Link>
             <h3 className="text-lg sm:text-xl font-semibold mb-2 font-sans">
               Useful Links
             </h3>
