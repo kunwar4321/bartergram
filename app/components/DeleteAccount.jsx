@@ -108,10 +108,7 @@ const DeleteAccount = () => {
 
   return (
     <>
-      <div
-        id={"delete-user"}
-        className="flex flex-col justify-center my-2 gap-3"
-      >
+      <div className="flex flex-col justify-center my-2 gap-3">
         <label className="font-semibold">Delete your account</label>
         <div className="flex justify-between w-full gap-x-3 h-10">
           <input

@@ -66,21 +66,17 @@ const sections = [
   {
     title: "Account Deletion",
     content: [
-      "You have the right to delete your account at any time. If you choose to delete your account, your personal information and data associated with your account will be permanently removed from our system. Please note that this action is irreversible, and once your account is deleted, you may lose access to certain features and information. We take the security and privacy of your data seriously and strive to provide you with the control to manage your account as you see fit.",
+      "You have the right to delete your account at any time. Upon account deletion, your personal information and associated data will be permanently removed. Please note that this action is irreversible, and you may lose access to certain features and information.",
     ],
     component: (
-      <ul className="list-disc pl-4 accent-rose-500">
+      <ul id={"delete-user"} className="list-disc pl-4 accent-rose-500">
         <h3 className="font-semibold text-base lg:text-md mt-3 mb-0.5">
           Note:
         </h3>
-        <li>Your account deletion request is processed promptly.</li>
+        <li>Account deletion requests are processed promptly.</li>
         <li>
-          All personal information, including user profile data, will be
-          deleted.
-        </li>
-        <li>
-          Associated posts, comments, and uploaded content will be permanently
-          removed.
+          All personal information, user profile data, interactions, comments,
+          and uploaded content will be permanently removed.
         </li>
         <li>
           This action is irreversible, and there is no recovery of deleted data.
@@ -90,6 +86,11 @@ const sections = [
         </li>
 
         <DeleteAccount />
+
+        <li className="mt-6">
+          If you encounter any issues or need assistance with account deletion,
+          please contact our support team at [support@bartergram.co].
+        </li>
       </ul>
     ),
   },
